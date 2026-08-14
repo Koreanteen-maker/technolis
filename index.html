@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Техно Лис — ремонт техники в Южно-Сахалинске</title>
+  <meta name="description" content="Техно Лис — ремонт смартфонов, ноутбуков и ПК. Поклейка защитных плёнок, установка Windows и приложений. Южно-Сахалинск, ТРК Сити Молл.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #ffffff;
+      color: #111111;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 23px;
+      font-weight: 800;
+    }
+
+    .fox {
+      width: 42px;
+      height: 42px;
+      background: #ff6a00;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    nav a {
+      transition: .2s;
+    }
+
+    nav a:hover {
+      color: #ff6a00;
+    }
+
+    .nav-button {
+      background: #111;
+      color: white;
+      padding: 11px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .nav-button:hover {
+      background: #ff6a00;
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(255,106,0,.18), transparent 30%),
+        radial-gradient(circle at 10% 80%, rgba(255,106,0,.08), transparent 25%),
+        #fff;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 80px 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      background: #fff0e7;
+      color: #ff6a00;
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 82px);
+      line-height: .98;
+      letter-spacing: -4px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: #ff6a00;
+    }
+
+    .hero p {
+      font-size: 21px;
+      color: #666;
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border-radius: 14px;
+      font-weight: 750;
+      transition: .25s;
+    }
+
+    .button-orange {
+      background: #ff6a00;
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(255,106,0,.25);
+    }
+
+    .button-orange:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(255,106,0,.35);
+    }
+
+    .button-black {
+      background: #111;
+      color: #fff;
+    }
+
+    .button-black:hover {
+      transform: translateY(-3px);
+      background: #222;
+    }
+
+    /* SERVICES */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      color: #ff6a00;
+      font-weight: 800;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(35px, 5vw, 55px);
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+
+    .section-description {
+      color: #777;
+      max-width: 600px;
+      margin-top: 15px;
+      font-size: 17px;
+    }
+
+    .services {
+      background: #f7f7f7;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 22px;
+      min-height: 190px;
+      border: 1px solid #eeeeee;
+      transition: .25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: #ff6a00;
+      box-shadow: 0 15px 35px rgba(0,0,0,.08);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 15px;
+      background: #fff0e7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      color: #777;
+      font-size: 15px;
+    }
+
+    /* ADVANTAGES */
+
+    .advantages {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .advantage {
+      padding: 25px;
+      border: 1px solid #eeeeee;
+      border-radius: 20px;
+    }
+
+    .advantage strong {
+      display: block;
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .advantage span {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* ACCESSORIES */
+
+    .accessories {
+      background: #111;
+      color: white;
+    }
+
+    .accessories .section-description {
+      color: #aaa;
+    }
+
+    .accessory-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .accessory {
+      border: 1px solid #333;
+      border-radius: 20px;
+      padding: 25px;
+      transition: .2s;
+    }
+
+    .accessory:hover {
+      background: #ff6a00;
+      border-color: #ff6a00;
+      transform: translateY(-5px);
+    }
+
+    .accessory-icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .accessory h3 {
+      font-size: 18px;
+    }
+
+    /* CONTACTS */
+
+    .contact-box {
+      background: #f7f7f7;
+      border-radius: 30px;
+      padding: 55px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info h2 {
+      font-size: 42px;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .contact-item {
+      margin: 20px 0;
+    }
+
+    .contact-item small {
+      display: block;
+      color: #888;
+      margin-bottom: 3px;
+    }
+
+    .contact-item a {
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .contact-item a:hover {
+      color: #ff6a00;
+    }
+
+    .map {
+      min-height: 300px;
+      border-radius: 22px;
+      background:
+        linear-gradient(rgba(255,106,0,.08), rgba(255,106,0,.08)),
+        #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .map-content {
+      background: white;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 35px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .copyright {
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .advantages {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .accessory-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .nav {
+        height: 65px;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      .fox {
+        width: 36px;
+        height: 36px;
+        font-size: 21px;
+      }
+
+      .hero-content {
+        padding: 60px 0;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .service-grid,
+      .advantages,
+      .accessory-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .contact-info h2 {
+        font-size: 35px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <div class="container nav">
+
+    <a href="#" class="logo">
+      <div class="fox">🦊</div>
+      Техно Лис
+    </a>
+
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#advantages">Почему мы</a>
+      <a href="#accessories">Аксессуары</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <a class="nav-button" href="tel:+79621526990">
+      Позвонить
+    </a>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        🦊 Сервисный центр «Техно Лис»
+      </div>
+
+      <h1>
+        Ремонт техники<br>
+        <span>без лишних хлопот.</span>
+      </h1>
+
+      <p>
+        Ремонт смартфонов, ноутбуков и ПК.
+        Защитные плёнки, установка Windows,
+        приложений и настройка техники.
+      </p>
+
+      <div class="buttons">
+
+        <a class="button button-orange"
+           href="tel:+79621526990">
+          📞 Записаться на ремонт
+        </a>
+
+        <a class="button button-black"
+           href="https://t.me/technolis"
+           target="_blank">
+          ✈️ Написать в Telegram
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        Наши услуги
+      </div>
+
+      <h2 class="section-title">
+        Что мы умеем
+      </h2>
+
+      <p class="section-description">
+        Поможем вернуть технику к жизни,
+        настроить устройство или защитить его
+        от повреждений.
+      </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Ремонт смартфонов</h3>
+        <p>
+          Замена дисплеев, аккумуляторов,
+          разъёмов и других компонентов.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Ремонт ноутбуков</h3>
+        <p>
+          Диагностика и ремонт ноутбуков
+          различных производителей.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="service-icon">🖥️</div>
+        <h3>Ремонт ПК</h3>
+        <p>
+          Обслуживание, диагностика,
+          модернизация и ремонт компьютеров.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="service-icon">🛡️</div>
+        <h3>Защитные плёнки</h3>
+        <p>
+          Профессиональная поклейка
+          защитных плёнок на устройства.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>Установка приложений</h3>
+        <p>
+          Поможем установить и настроить
+          необходимые приложения.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="service-icon">🪟</div>
+        <h3>Windows и Office</h3>
+        <p>
+          Установка и настройка Windows
+          и офисных программ.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="service-icon">🥽</div>
+        <h3>VR-очки</h3>
+        <p>
+          Настройка, прошивка и установка
+          необходимого ПО для VR.
+        </p>
+      </div>
+
+
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Диагностика</h3>
+        <p>
+          Найдём причину неисправности
+          и предложим оптимальный ремонт.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ADVANTAGES -->
+
+<section id="advantages">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        Техно Лис
+      </div>
+
+      <h2 class="section-title">
+        Почему выбирают нас
+      </h2>
+
+    </div>
+
+
+    <div class="advantages">
+
+      <div class="advantage">
+        <strong>🔍 Диагностика</strong>
+        <span>
+          Разберёмся в причине неисправности
+          перед ремонтом.
+        </span>
+      </div>
+
+      <div class="advantage">
+        <strong>⚡ Быстро</strong>
+        <span>
+          Стараемся выполнить ремонт
+          максимально оперативно.
+        </span>
+      </div>
+
+      <div class="advantage">
+        <strong>🛠️ Опыт</strong>
+        <span>
+          Работаем с популярными моделями
+          смартфонов и компьютеров.
+        </span>
+      </div>
+
+      <div class="advantage">
+        <strong>💬 На связи</strong>
+        <span>
+          Всегда можно связаться с нами
+          по телефону или Telegram.
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ACCESSORIES -->
+
+<section class="accessories" id="accessories">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        Магазин
+      </div>
+
+      <h2 class="section-title">
+        Аксессуары
+      </h2>
+
+      <p class="section-description">
+        Всё необходимое для защиты и зарядки
+        вашего устройства.
+      </p>
+
+    </div>
+
+
+    <div class="accessory-grid">
+
+      <div class="accessory">
+        <div class="accessory-icon">📱</div>
+        <h3>Чехлы</h3>
+      </div>
+
+      <div class="accessory">
+        <div class="accessory-icon">🛡️</div>
+        <h3>Защитные стёкла</h3>
+      </div>
+
+      <div class="accessory">
+        <div class="accessory-icon">✨</div>
+        <h3>Плёнки</h3>
+      </div>
+
+      <div class="accessory">
+        <div class="accessory-icon">🧲</div>
+        <h3>MagSafe</h3>
+      </div>
+
+      <div class="accessory">
+        <div class="accessory-icon">🔋</div>
+        <h3>Power Bank</h3>
+      </div>
+
+      <div class="accessory">
+        <div class="accessory-icon">🔌</div>
+        <h3>Зарядки</h3>
+      </div>
+
+      <div class="accessory">
+        <div class="accessory-icon">🔗</div>
+        <h3>Кабели</h3>
+      </div>
+
+      <div class="accessory">
+        <div class="accessory-icon">💳</div>
+        <h3>Картхолдеры</h3>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACTS -->
+
+<section id="contacts">
+
+  <div class="container">
+
+    <div class="contact-box">
+
+      <div class="contact-info">
+
+        <div class="section-label">
+          Контакты
+        </div>
+
+        <h2>
+          Заглядывайте<br>
+          в гости 🦊
+        </h2>
+
+
+        <div class="contact-item">
+          <small>Адрес</small>
+          <strong>
+            г. Южно-Сахалинск,<br>
+            ТРК «Сити Молл», 1 этаж
+          </strong>
+        </div>
+
+
+        <div class="contact-item">
+          <small>Телефон</small>
+
+          <a href="tel:+79621526990">
+            8 962 152-69-90
+          </a>
+        </div>
+
+
+        <div class="contact-item">
+          <small>Telegram</small>
+
+          <a href="https://t.me/technolis"
+             target="_blank">
+            @technolis
+          </a>
+        </div>
+
+
+        <div class="buttons">
+
+          <a class="button button-orange"
+             href="tel:+79621526990">
+            Позвонить
+          </a>
+
+          <a class="button button-black"
+             href="https://t.me/technolis"
+             target="_blank">
+            Telegram
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="map">
+
+        <div class="map-content">
+
+          <div style="font-size:40px;">
+            📍
+          </div>
+
+          <h3>
+            ТРК «Сити Молл»
+          </h3>
+
+          <p>
+            1 этаж<br>
+            Южно-Сахалинск
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div class="footer-logo">
+      🦊 Техно Лис
+    </div>
+
+    <div class="copyright">
+      © 2026 Техно Лис. Ремонт техники.
+    </div>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
