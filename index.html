@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Техно Лис — ремонт техники в Южно-Сахалинске</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Техно Лис — ремонт смартфонов, ноутбуков, ПК и планшетов в Южно-Сахалинске. Диагностика, поклейка плёнок, установка приложений и Windows.">
+<title>
+Техно Лис — ремонт техники в Южно-Сахалинске
+</title>
+
+<meta name="description"
+content="Техно Лис — ремонт смартфонов, ноутбуков, ПК и планшетов в Южно-Сахалинске. Диагностика, поклейка плёнок, установка приложений и Windows.">
+
 
 <style>
+
+/* =====================================================
+   ОСНОВНЫЕ НАСТРОЙКИ
+===================================================== */
 
 * {
     margin: 0;
@@ -21,715 +33,1287 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     color: #111111;
+
+    background-color: #f3f3f3;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.7) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.7) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
 }
 
 a {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
 .container {
+
     width: min(1180px, 92%);
-    margin: auto;
+
+    margin: 0 auto;
 }
 
 
-/* =========================
+/* =====================================================
+   ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ ФОНА
+===================================================== */
+
+.page-decoration {
+
+    position: fixed;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background: #ff5a00;
+
+    opacity: .035;
+
+    filter: blur(10px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.page-decoration.one {
+
+    top: 250px;
+    left: -160px;
+}
+
+.page-decoration.two {
+
+    top: 1200px;
+    right: -160px;
+}
+
+
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header {
+
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
-    background: #090909;
-    border-bottom: 2px solid #ff5a00;
+
+    background: rgba(8,8,8,.97);
+
+    border-bottom:
+        2px solid #ff5a00;
+
+    backdrop-filter: blur(10px);
 }
 
 .header-inner {
+
     height: 82px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 25px;
 }
 
 
-/* КРУГЛЫЙ ЛОГОТИП */
+/* =====================================================
+   ЛОГОТИП
+===================================================== */
 
 .logo-circle {
+
     width: 64px;
     height: 64px;
+
     border-radius: 50%;
+
     overflow: hidden;
-    border: 2px solid #ff5a00;
+
     background: #ffffff;
+
+    border:
+        2px solid #ff5a00;
+
     flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 0 0 3px rgba(255,90,0,.08);
 }
 
 .logo-circle img {
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     display: block;
 }
 
 
+/* =====================================================
+   НАВИГАЦИЯ
+===================================================== */
+
 nav {
+
     display: flex;
+
     align-items: center;
+
     gap: 28px;
 }
 
 nav a {
+
     color: #ffffff;
+
     font-size: 14px;
+
     font-weight: 700;
+
     transition: .2s;
 }
 
 nav a:hover {
+
     color: #ff5a00;
 }
 
+
+/* =====================================================
+   КНОПКА ПОЗВОНИТЬ
+===================================================== */
+
 .header-phone {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding:
+        13px 20px;
+
     background: #ff5a00;
+
     color: #ffffff;
-    padding: 13px 20px;
+
     border-radius: 10px;
+
     font-weight: 800;
+
     white-space: nowrap;
+
+    box-shadow:
+        0 5px 18px
+        rgba(255,90,0,.25);
+
+    transition: .25s;
+}
+
+.header-phone svg {
+
+    width: 20px;
+    height: 20px;
+
+    fill: #ffffff;
+
+    flex-shrink: 0;
 }
 
 .header-phone:hover {
-    background: #ff6b1a;
+
+    background: #ffffff;
+
+    color: #111111;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.2);
+}
+
+.header-phone:hover svg {
+
+    fill: #ff5a00;
 }
 
 
-/* =========================
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero {
-    min-height: 590px;
+
+    min-height: 600px;
+
     display: flex;
+
     align-items: center;
+
     position: relative;
+
     overflow: hidden;
 
     background:
+
         radial-gradient(
             circle at 85% 20%,
-            rgba(255,90,0,.16),
+            rgba(255,90,0,.17),
             transparent 30%
         ),
+
         linear-gradient(
             120deg,
-            #ffffff 0%,
-            #ffffff 60%,
-            #f4f4f4 100%
+            rgba(255,255,255,.95),
+            rgba(245,245,245,.92)
         );
 }
 
 .hero::after {
+
     content: "";
+
     position: absolute;
-    width: 500px;
-    height: 500px;
-    right: -180px;
-    bottom: -250px;
+
+    width: 520px;
+    height: 520px;
+
+    right: -190px;
+    bottom: -260px;
+
     background: #ff5a00;
-    transform: rotate(25deg);
-    opacity: .07;
+
+    transform:
+        rotate(25deg);
+
+    opacity: .06;
 }
 
 .hero-content {
+
     position: relative;
+
     z-index: 2;
+
     max-width: 760px;
+
     padding: 80px 0;
 }
 
 .hero-label {
+
     color: #ff5a00;
+
     font-size: 14px;
+
     font-weight: 800;
+
     text-transform: uppercase;
+
     margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: clamp(48px, 7vw, 80px);
+
+    font-size:
+        clamp(48px, 7vw, 80px);
+
     line-height: .95;
+
     letter-spacing: -4px;
+
     margin-bottom: 25px;
 }
 
 .hero h1 span {
+
     color: #ff5a00;
 }
 
 .hero p {
+
     max-width: 650px;
-    color: #666;
+
+    color: #666666;
+
     font-size: 20px;
+
     line-height: 1.5;
+
     margin-bottom: 32px;
 }
 
+
+/* =====================================================
+   КНОПКИ
+===================================================== */
+
 .buttons {
+
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 12px;
 }
 
 .btn {
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
-    padding: 15px 23px;
+
+    padding:
+        15px 23px;
+
     border-radius: 10px;
+
     font-weight: 800;
+
     transition: .25s;
 }
 
 .btn-orange {
+
     background: #ff5a00;
-    color: white;
+
+    color: #ffffff;
 }
 
 .btn-orange:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(255,90,0,.3);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(255,90,0,.3);
 }
 
 .btn-black {
-    background: #111;
-    color: white;
+
+    background: #111111;
+
+    color: #ffffff;
 }
 
 .btn-black:hover {
-    transform: translateY(-3px);
-    background: #222;
+
+    background: #222222;
+
+    transform:
+        translateY(-3px);
 }
 
 
-/* =========================
-   ADVANTAGES
-========================= */
+/* =====================================================
+   ПРЕИМУЩЕСТВА
+===================================================== */
 
 .advantages {
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap: 20px;
+
     margin-top: 50px;
 }
 
 .advantage {
+
     display: flex;
+
     align-items: center;
+
     gap: 12px;
 }
 
 .advantage-icon {
+
     font-size: 28px;
 }
 
 .advantage strong {
+
     display: block;
+
     font-size: 14px;
 }
 
 .advantage span {
+
     display: block;
-    color: #777;
+
+    color: #777777;
+
     font-size: 12px;
+
     margin-top: 3px;
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
+/* =====================================================
+   ОБЩИЕ СЕКЦИИ
+===================================================== */
 
 section {
+
     padding: 90px 0;
 }
 
 .section-title {
+
     margin-bottom: 40px;
 }
 
 .section-title small {
+
     color: #ff5a00;
+
     font-weight: 800;
+
     text-transform: uppercase;
 }
 
 .section-title h2 {
-    font-size: clamp(36px, 5vw, 55px);
+
+    font-size:
+        clamp(36px,5vw,55px);
+
     margin-top: 8px;
+
     line-height: 1;
 }
 
 .section-title p {
-    color: #777;
+
+    color: #777777;
+
     max-width: 650px;
+
     margin-top: 14px;
 }
 
 
-/* =========================
-   SERVICES
-========================= */
+/* =====================================================
+   УСЛУГИ
+===================================================== */
 
 .services {
-    background: #f5f5f5;
+
+    background:
+        rgba(245,245,245,.88);
+
+    backdrop-filter: blur(4px);
 }
 
 .service-grid {
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap: 16px;
 }
 
 .service {
-    background: white;
-    border: 1px solid #e8e8e8;
+
+    background:
+        rgba(255,255,255,.94);
+
+    border:
+        1px solid #e5e5e5;
+
     border-radius: 18px;
+
     padding: 28px 20px;
+
     text-align: center;
+
     transition: .25s;
 }
 
 .service:hover {
-    transform: translateY(-6px);
-    border-color: #ff5a00;
-    box-shadow: 0 15px 30px rgba(0,0,0,.08);
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        #ff5a00;
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,.08);
 }
 
 .service-icon {
+
     font-size: 40px;
+
     margin-bottom: 15px;
 }
 
 .service h3 {
+
     font-size: 17px;
 }
 
 .service p {
-    color: #777;
+
+    color: #777777;
+
     font-size: 13px;
+
     margin-top: 7px;
 }
 
 
-/* =========================
-   PRICE
-========================= */
+/* =====================================================
+   ПРАЙС
+===================================================== */
 
 .price-section {
+
     background: #080808;
-    color: white;
+
+    color: #ffffff;
 }
 
 .price-tabs {
+
     display: flex;
+
     overflow-x: auto;
-    border: 1px solid #333;
-    border-radius: 12px 12px 0 0;
+
+    border:
+        1px solid #333333;
+
+    border-radius:
+        12px 12px 0 0;
 }
 
 .price-tab {
+
     flex: 1;
+
     min-width: 160px;
+
     padding: 16px;
+
     background: #101010;
+
     border: none;
-    border-right: 1px solid #333;
-    color: #aaa;
+
+    border-right:
+        1px solid #333333;
+
+    color: #aaaaaa;
+
     cursor: pointer;
+
     font-weight: 800;
+
     font-size: 13px;
+
+    transition: .2s;
 }
 
 .price-tab:last-child {
+
     border-right: none;
 }
 
 .price-tab:hover,
 .price-tab.active {
+
     background: #ff5a00;
-    color: white;
+
+    color: #ffffff;
 }
 
 .price-content {
+
     display: none;
-    border: 1px solid #333;
+
+    border:
+        1px solid #333333;
+
     border-top: none;
-    border-radius: 0 0 12px 12px;
+
+    border-radius:
+        0 0 12px 12px;
+
     overflow: hidden;
 }
 
 .price-content.active {
+
     display: block;
 }
 
 .price-row {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 20px;
+
     padding: 17px 20px;
-    border-bottom: 1px solid #292929;
+
+    border-bottom:
+        1px solid #292929;
 }
 
 .price-row:last-child {
+
     border-bottom: none;
 }
 
 .price-name {
+
     color: #eeeeee;
 }
 
 .price-value {
+
     color: #ff5a00;
+
     font-weight: 900;
+
     white-space: nowrap;
 }
 
 .price-note {
+
     margin-top: 20px;
+
     padding: 18px;
+
     border-radius: 12px;
+
     background: #151515;
-    color: #aaa;
+
+    color: #aaaaaa;
+
     text-align: center;
 }
 
 .price-note a {
+
     color: #ff5a00;
+
     font-weight: 800;
 }
 
 
-/* =========================
-   ACCESSORIES
-========================= */
+/* =====================================================
+   АКСЕССУАРЫ
+===================================================== */
 
 .accessories {
-    background: #f5f5f5;
+
+    background:
+        rgba(245,245,245,.9);
 }
 
 .accessory-grid {
+
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap: 15px;
 }
 
 .accessory {
-    background: white;
+
+    background:
+        rgba(255,255,255,.96);
+
     padding: 28px;
+
     border-radius: 18px;
-    border: 1px solid #eee;
+
+    border:
+        1px solid #eeeeee;
+
     transition: .2s;
 }
 
 .accessory:hover {
-    transform: translateY(-4px);
-    border-color: #ff5a00;
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        #ff5a00;
 }
 
 .accessory-icon {
+
     font-size: 32px;
+
     margin-bottom: 13px;
 }
 
 .accessory p {
-    color: #777;
+
+    color: #777777;
+
     font-size: 13px;
+
     margin-top: 5px;
 }
 
 
-/* =========================
-   LOCATION
-========================= */
+/* =====================================================
+   КАРТА
+===================================================== */
 
 .location {
-    background: white;
+
+    background:
+        rgba(255,255,255,.9);
 }
 
 .location-grid {
+
     display: grid;
-    grid-template-columns: 350px 1fr;
+
+    grid-template-columns:
+        350px 1fr;
+
     gap: 30px;
 }
 
 .location-info {
+
     background: #f5f5f5;
+
     padding: 35px;
+
     border-radius: 20px;
+
+    border:
+        1px solid #eeeeee;
 }
 
 .location-info h2 {
+
     font-size: 40px;
+
     margin-bottom: 30px;
 }
 
 .location-item {
+
     margin-bottom: 23px;
 }
 
 .location-item small {
+
     display: block;
-    color: #777;
+
+    color: #777777;
+
     margin-bottom: 5px;
 }
 
 .location-item strong {
+
     font-size: 17px;
 }
 
 .location-item a {
+
     color: #ff5a00;
 }
 
 .map {
+
     min-height: 420px;
+
     border-radius: 20px;
+
     overflow: hidden;
-    border: 1px solid #ddd;
+
+    border:
+        1px solid #dddddd;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.06);
 }
 
 .map iframe {
+
     width: 100%;
+
     height: 100%;
+
     min-height: 420px;
+
     border: 0;
 }
 
 
-/* =========================
-   CONTACTS
-========================= */
+/* =====================================================
+   КОНТАКТЫ
+===================================================== */
 
 .contacts {
-    background: #f5f5f5;
+
+    background:
+        rgba(245,245,245,.9);
 }
 
 .contact-grid {
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap: 18px;
 }
 
 .contact-card {
-    background: white;
+
+    background:
+        rgba(255,255,255,.95);
+
     padding: 30px;
+
     border-radius: 18px;
-    border: 1px solid #eee;
+
+    border:
+        1px solid #eeeeee;
+
+    transition: .2s;
+}
+
+.contact-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        #ff5a00;
 }
 
 .contact-icon {
+
     font-size: 32px;
+
     margin-bottom: 15px;
 }
 
 .contact-card h3 {
+
     margin-bottom: 8px;
 }
 
 .contact-card p {
-    color: #777;
+
+    color: #777777;
 }
 
 .contact-card a {
+
     color: #ff5a00;
+
     font-weight: 800;
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer {
+
     background: #080808;
-    color: white;
-    padding: 50px 0 30px;
+
+    color: #ffffff;
+
+    padding:
+        50px 0 30px;
 }
 
 .footer-grid {
+
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
     gap: 40px;
 }
 
 .footer-logo {
+
     width: 75px;
+
     height: 75px;
 }
 
 .footer-description {
-    color: #888;
+
+    color: #888888;
+
     margin-top: 12px;
 }
 
 .footer-column h3 {
+
     margin-bottom: 15px;
 }
 
 .footer-column a {
+
     display: block;
-    color: #aaa;
+
+    color: #aaaaaa;
+
     margin-bottom: 9px;
+
+    transition: .2s;
 }
 
 .footer-column a:hover {
+
     color: #ff5a00;
 }
 
 .copyright {
+
     margin-top: 40px;
+
     padding-top: 20px;
-    border-top: 1px solid #222;
-    color: #666;
+
+    border-top:
+        1px solid #222222;
+
+    color: #666666;
+
     font-size: 13px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =====================================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+===================================================== */
 
-@media(max-width: 900px) {
+@media(max-width:900px) {
 
     nav {
         display: none;
     }
 
     .service-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .advantages {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .accessory-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .location-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
     .contact-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
     }
 }
 
 
-@media(max-width: 600px) {
+@media(max-width:600px) {
 
     .header-phone {
+
         display: none;
     }
 
     .header-inner {
+
         justify-content: center;
     }
 
     .hero {
+
         min-height: 560px;
     }
 
     .hero h1 {
+
         font-size: 48px;
+
         letter-spacing: -2px;
     }
 
     .hero p {
+
         font-size: 17px;
     }
 
     .advantages {
-        grid-template-columns: 1fr 1fr;
-        gap: 18px 10px;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            18px 10px;
     }
 
     .service-grid,
     .accessory-grid {
-        grid-template-columns: 1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .btn {
+
         width: 100%;
     }
 
     .price-row {
+
         font-size: 14px;
     }
 
     .location-info h2 {
+
         font-size: 34px;
     }
 
     .footer-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
 }
 
+
+/* =====================================================
+   МОБИЛЬНАЯ КНОПКА ТЕЛЕФОНА
+===================================================== */
+
+@media(max-width:600px) {
+
+    .header-phone {
+
+        display: inline-flex;
+    }
+
+    .header-inner {
+
+        justify-content: space-between;
+    }
+
+    .header-phone span {
+
+        display: none;
+    }
+
+    .header-phone {
+
+        width: 48px;
+        height: 48px;
+
+        padding: 0;
+
+        border-radius: 50%;
+    }
+
+    .header-phone svg {
+
+        width: 22px;
+        height: 22px;
+    }
+}
+
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
+     ДЕКОР ФОНА
+===================================================== -->
+
+<div class="page-decoration one"></div>
+
+<div class="page-decoration two"></div>
+
+
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header>
 
 <div class="container header-inner">
 
+
 <a href="#">
-    <div class="logo-circle">
-        <img src="logo-circle.png" alt="Техно Лис">
-    </div>
+
+<div class="logo-circle">
+
+<img
+src="logo-circle.png"
+alt="Техно Лис">
+
+</div>
+
 </a>
+
 
 <nav>
-    <a href="#services">Услуги</a>
-    <a href="#price">Прайс-лист</a>
-    <a href="#accessories">Аксессуары</a>
-    <a href="#location">Где мы</a>
-    <a href="#contacts">Контакты</a>
+
+<a href="#services">
+Услуги
+</a>
+
+<a href="#price">
+Прайс-лист
+</a>
+
+<a href="#accessories">
+Аксессуары
+</a>
+
+<a href="#location">
+Где мы
+</a>
+
+<a href="#contacts">
+Контакты
+</a>
+
 </nav>
 
-<a class="header-phone" href="tel:+79621526990">
-    📞 Позвонить
+
+<a
+class="header-phone"
+href="tel:+79621526990"
+>
+
+<svg
+viewBox="0 0 24 24"
+aria-hidden="true"
+>
+
+<path d="
+M6.6 10.8
+c1.4 2.8 3.7 5.2 6.6 6.6
+l2.2-2.2
+c.3-.3.8-.4 1.2-.2
+1.3.4 2.7.6 4.1.6
+.7 0 1.3.6 1.3 1.3
+V20
+c0 .7-.6 1.3-1.3 1.3
+C10.1 21.3 2.7 13.9 2.7 4.7
+2.7 4 3.3 3.4 4 3.4
+h3.1
+c.7 0 1.3.6 1.3 1.3
+0 1.4.2 2.8.6 4.1
+.1.4 0 .9-.2 1.2
+l-2.2 2.2z
+"/>
+
+</svg>
+
+<span>
+Позвонить
+</span>
+
 </a>
+
 
 </div>
 
 </header>
 
 
-<!-- =========================
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <section class="hero">
 
@@ -737,69 +1321,151 @@ footer {
 
 <div class="hero-content">
 
+
 <div class="hero-label">
-Сервисный центр в Южно-Сахалинске
+
+Сервисный центр
+в Южно-Сахалинске
+
 </div>
 
+
 <h1>
+
 Техника<br>
-в <span>надёжных лапах!</span>
+
+в
+<span>
+надёжных лапах!
+</span>
+
 </h1>
 
+
 <p>
-Ремонт смартфонов, ноутбуков, ПК и другой техники.
-Качественно, быстро и с гарантией.
+
+Ремонт смартфонов, ноутбуков,
+ПК и другой техники.
+
+Качественно, быстро
+и с гарантией.
+
 </p>
+
 
 <div class="buttons">
 
-<a class="btn btn-orange"
-href="tel:+79621526990">
+
+<a
+class="btn btn-orange"
+href="tel:+79621526990"
+>
+
 📞 Записаться на ремонт
+
 </a>
 
-<a class="btn btn-black"
+
+<a
+class="btn btn-black"
 href="https://t.me/tehnafox"
-target="_blank">
+target="_blank"
+>
+
 ✈️ Написать в Telegram
+
 </a>
+
 
 </div>
 
 
 <div class="advantages">
 
-<div class="advantage">
-<div class="advantage-icon">🛡️</div>
-<div>
-<strong>Гарантия</strong>
-<span>на работы</span>
-</div>
-</div>
 
 <div class="advantage">
-<div class="advantage-icon">⚡</div>
-<div>
-<strong>Быстрый ремонт</strong>
-<span>без лишних ожиданий</span>
-</div>
+
+<div class="advantage-icon">
+🛡️
 </div>
 
-<div class="advantage">
-<div class="advantage-icon">👍</div>
 <div>
-<strong>Честные цены</strong>
-<span>и понятный прайс</span>
-</div>
+
+<strong>
+Гарантия
+</strong>
+
+<span>
+на работы
+</span>
+
 </div>
 
+</div>
+
+
 <div class="advantage">
-<div class="advantage-icon">🧡</div>
+
+<div class="advantage-icon">
+⚡
+</div>
+
 <div>
-<strong>Забота</strong>
-<span>о каждом клиенте</span>
+
+<strong>
+Быстрый ремонт
+</strong>
+
+<span>
+без лишних ожиданий
+</span>
+
 </div>
+
 </div>
+
+
+<div class="advantage">
+
+<div class="advantage-icon">
+👍
+</div>
+
+<div>
+
+<strong>
+Честные цены
+</strong>
+
+<span>
+и понятный прайс
+</span>
+
+</div>
+
+</div>
+
+
+<div class="advantage">
+
+<div class="advantage-icon">
+🧡
+</div>
+
+<div>
+
+<strong>
+Забота
+</strong>
+
+<span>
+о каждом клиенте
+</span>
+
+</div>
+
+</div>
+
 
 </div>
 
@@ -810,19 +1476,27 @@ target="_blank">
 </section>
 
 
-<!-- =========================
-     SERVICES
-========================= -->
+<!-- =====================================================
+     УСЛУГИ
+===================================================== -->
 
-<section class="services" id="services">
+<section
+class="services"
+id="services"
+>
 
 <div class="container">
 
+
 <div class="section-title">
 
-<small>Наши услуги</small>
+<small>
+Наши услуги
+</small>
 
-<h2>Что мы делаем</h2>
+<h2>
+Что мы делаем
+</h2>
 
 <p>
 Ремонтируем и настраиваем технику,
@@ -836,58 +1510,138 @@ target="_blank">
 
 
 <div class="service">
-<div class="service-icon">📱</div>
-<h3>Ремонт смартфонов</h3>
-<p>iPhone, Samsung, Xiaomi и другие</p>
+
+<div class="service-icon">
+📱
+</div>
+
+<h3>
+Ремонт смартфонов
+</h3>
+
+<p>
+iPhone, Samsung, Xiaomi и другие
+</p>
+
 </div>
 
 
 <div class="service">
-<div class="service-icon">💻</div>
-<h3>Ремонт ноутбуков</h3>
-<p>Диагностика и ремонт</p>
+
+<div class="service-icon">
+💻
+</div>
+
+<h3>
+Ремонт ноутбуков
+</h3>
+
+<p>
+Диагностика и ремонт
+</p>
+
 </div>
 
 
 <div class="service">
-<div class="service-icon">🖥️</div>
-<h3>Ремонт ПК</h3>
-<p>Компьютеры и комплектующие</p>
+
+<div class="service-icon">
+🖥️
+</div>
+
+<h3>
+Ремонт ПК
+</h3>
+
+<p>
+Компьютеры и комплектующие
+</p>
+
 </div>
 
 
 <div class="service">
-<div class="service-icon">📲</div>
-<h3>Ремонт планшетов</h3>
-<p>Дисплеи, аккумуляторы и разъёмы</p>
+
+<div class="service-icon">
+📲
+</div>
+
+<h3>
+Ремонт планшетов
+</h3>
+
+<p>
+Дисплеи, аккумуляторы и разъёмы
+</p>
+
 </div>
 
 
 <div class="service">
-<div class="service-icon">🛡️</div>
-<h3>Поклейка плёнок</h3>
-<p>Премиум плёнка и бронеплёнка</p>
+
+<div class="service-icon">
+🛡️
+</div>
+
+<h3>
+Поклейка плёнок
+</h3>
+
+<p>
+Премиум плёнка и бронеплёнка
+</p>
+
 </div>
 
 
 <div class="service">
-<div class="service-icon">⚙️</div>
-<h3>Установка приложений</h3>
-<p>Игры, программы и настройка</p>
+
+<div class="service-icon">
+⚙️
+</div>
+
+<h3>
+Установка приложений
+</h3>
+
+<p>
+Игры, программы и настройка
+</p>
+
 </div>
 
 
 <div class="service">
-<div class="service-icon">🪟</div>
-<h3>Windows и Office</h3>
-<p>Установка и настройка</p>
+
+<div class="service-icon">
+🪟
+</div>
+
+<h3>
+Windows и Office
+</h3>
+
+<p>
+Установка и настройка
+</p>
+
 </div>
 
 
 <div class="service">
-<div class="service-icon">🥽</div>
-<h3>VR-очки</h3>
-<p>Настройка и прошивка</p>
+
+<div class="service-icon">
+🥽
+</div>
+
+<h3>
+VR-очки
+</h3>
+
+<p>
+Настройка и прошивка
+</p>
+
 </div>
 
 
@@ -898,23 +1652,32 @@ target="_blank">
 </section>
 
 
-<!-- =========================
-     PRICE
-========================= -->
+<!-- =====================================================
+     ПРАЙС
+===================================================== -->
 
-<section class="price-section" id="price">
+<section
+class="price-section"
+id="price"
+>
 
 <div class="container">
 
+
 <div class="section-title">
 
-<small>Стоимость</small>
+<small>
+Стоимость
+</small>
 
-<h2>Прайс-лист</h2>
+<h2>
+Прайс-лист
+</h2>
 
 <p>
-Цены указаны ориентировочно и могут меняться
-в зависимости от модели устройства и сложности работ.
+Цены указаны ориентировочно
+и могут меняться в зависимости
+от модели устройства и сложности работ.
 </p>
 
 </div>
@@ -922,34 +1685,60 @@ target="_blank">
 
 <div class="price-tabs">
 
-<button class="price-tab active"
-onclick="openPrice(event,'protection')">
+
+<button
+class="price-tab active"
+onclick="openPrice(event,'protection')"
+>
+
 Защита и аксессуары
+
 </button>
 
-<button class="price-tab"
-onclick="openPrice(event,'repair')">
+
+<button
+class="price-tab"
+onclick="openPrice(event,'repair')"
+>
+
 Ремонт устройств
+
 </button>
 
-<button class="price-tab"
-onclick="openPrice(event,'diagnostics')">
+
+<button
+class="price-tab"
+onclick="openPrice(event,'diagnostics')"
+>
+
 Диагностика
+
 </button>
 
-<button class="price-tab"
-onclick="openPrice(event,'service')">
+
+<button
+class="price-tab"
+onclick="openPrice(event,'service')"
+>
+
 Сервисные услуги
+
 </button>
+
 
 </div>
 
 
 <!-- ЗАЩИТА -->
 
-<div class="price-content active" id="protection">
+<div
+class="price-content active"
+id="protection"
+>
+
 
 <div class="price-row">
+
 <span class="price-name">
 Премиум плёнка
 </span>
@@ -957,10 +1746,12 @@ onclick="openPrice(event,'service')">
 <span class="price-value">
 1 500 ₽
 </span>
+
 </div>
 
 
 <div class="price-row">
+
 <span class="price-name">
 Бронеплёнка
 </span>
@@ -968,10 +1759,12 @@ onclick="openPrice(event,'service')">
 <span class="price-value">
 2 000 ₽
 </span>
+
 </div>
 
 
 <div class="price-row">
+
 <span class="price-name">
 Бронестекло (только для iPhone)
 </span>
@@ -979,16 +1772,23 @@ onclick="openPrice(event,'service')">
 <span class="price-value">
 2 000 ₽
 </span>
+
 </div>
+
 
 </div>
 
 
 <!-- РЕМОНТ -->
 
-<div class="price-content" id="repair">
+<div
+class="price-content"
+id="repair"
+>
+
 
 <div class="price-row">
+
 <span class="price-name">
 Ремонт смартфона
 </span>
@@ -996,10 +1796,12 @@ onclick="openPrice(event,'service')">
 <span class="price-value">
 от 3 000 ₽
 </span>
+
 </div>
 
 
 <div class="price-row">
+
 <span class="price-name">
 Ремонт ноутбука
 </span>
@@ -1007,10 +1809,12 @@ onclick="openPrice(event,'service')">
 <span class="price-value">
 от 4 000 ₽
 </span>
+
 </div>
 
 
 <div class="price-row">
+
 <span class="price-name">
 Ремонт планшета
 </span>
@@ -1018,16 +1822,23 @@ onclick="openPrice(event,'service')">
 <span class="price-value">
 от 3 500 ₽
 </span>
+
 </div>
+
 
 </div>
 
 
 <!-- ДИАГНОСТИКА -->
 
-<div class="price-content" id="diagnostics">
+<div
+class="price-content"
+id="diagnostics"
+>
+
 
 <div class="price-row">
+
 <span class="price-name">
 Консультация / диагностика
 </span>
@@ -1035,10 +1846,12 @@ onclick="openPrice(event,'service')">
 <span class="price-value">
 БЕСПЛАТНО
 </span>
+
 </div>
 
 
 <div class="price-row">
+
 <span class="price-name">
 Диагностика со вскрытием
 </span>
@@ -1046,16 +1859,23 @@ onclick="openPrice(event,'service')">
 <span class="price-value">
 от 1 000 ₽
 </span>
+
 </div>
+
 
 </div>
 
 
 <!-- СЕРВИС -->
 
-<div class="price-content" id="service">
+<div
+class="price-content"
+id="service"
+>
+
 
 <div class="price-row">
+
 <span class="price-name">
 Чистка динамиков и разъёмов
 </span>
@@ -1063,10 +1883,12 @@ onclick="openPrice(event,'service')">
 <span class="price-value">
 800 ₽
 </span>
+
 </div>
 
 
 <div class="price-row">
+
 <span class="price-name">
 Установка приложений
 </span>
@@ -1074,10 +1896,12 @@ onclick="openPrice(event,'service')">
 <span class="price-value">
 от 1 000 ₽
 </span>
+
 </div>
 
 
 <div class="price-row">
+
 <span class="price-name">
 Перепрошивка устройства
 </span>
@@ -1085,10 +1909,12 @@ onclick="openPrice(event,'service')">
 <span class="price-value">
 от 2 000 ₽
 </span>
+
 </div>
 
 
 <div class="price-row">
+
 <span class="price-name">
 Прочие услуги
 </span>
@@ -1096,7 +1922,9 @@ onclick="openPrice(event,'service')">
 <span class="price-value">
 от 1 000 ₽
 </span>
+
 </div>
+
 
 </div>
 
@@ -1107,30 +1935,44 @@ onclick="openPrice(event,'service')">
 
 <br><br>
 
-<a href="https://t.me/tehnafox" target="_blank">
+<a
+href="https://t.me/tehnafox"
+target="_blank"
+>
+
 ✈️ Написать в Telegram — @tehnafox
+
 </a>
 
 </div>
+
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     ACCESSORIES
-========================= -->
+<!-- =====================================================
+     АКСЕССУАРЫ
+===================================================== -->
 
-<section class="accessories" id="accessories">
+<section
+class="accessories"
+id="accessories"
+>
 
 <div class="container">
 
+
 <div class="section-title">
 
-<small>Магазин</small>
+<small>
+Магазин
+</small>
 
-<h2>Аксессуары</h2>
+<h2>
+Аксессуары
+</h2>
 
 <p>
 Защитные аксессуары и всё необходимое
@@ -1144,58 +1986,138 @@ onclick="openPrice(event,'service')">
 
 
 <div class="accessory">
-<div class="accessory-icon">📱</div>
-<h3>Чехлы</h3>
-<p>На популярные модели</p>
+
+<div class="accessory-icon">
+📱
+</div>
+
+<h3>
+Чехлы
+</h3>
+
+<p>
+На популярные модели
+</p>
+
 </div>
 
 
 <div class="accessory">
-<div class="accessory-icon">🛡️</div>
-<h3>Защитные стёкла</h3>
-<p>Экран и камеры</p>
+
+<div class="accessory-icon">
+🛡️
+</div>
+
+<h3>
+Защитные стёкла
+</h3>
+
+<p>
+Экран и камеры
+</p>
+
 </div>
 
 
 <div class="accessory">
-<div class="accessory-icon">✨</div>
-<h3>Плёнки</h3>
-<p>Премиум и бронеплёнка</p>
+
+<div class="accessory-icon">
+✨
+</div>
+
+<h3>
+Плёнки
+</h3>
+
+<p>
+Премиум и бронеплёнка
+</p>
+
 </div>
 
 
 <div class="accessory">
-<div class="accessory-icon">🧲</div>
-<h3>MagSafe</h3>
-<p>Зарядки и аксессуары</p>
+
+<div class="accessory-icon">
+🧲
+</div>
+
+<h3>
+MagSafe
+</h3>
+
+<p>
+Зарядки и аксессуары
+</p>
+
 </div>
 
 
 <div class="accessory">
-<div class="accessory-icon">🔋</div>
-<h3>Power Bank</h3>
-<p>Для зарядки в дороге</p>
+
+<div class="accessory-icon">
+🔋
+</div>
+
+<h3>
+Power Bank
+</h3>
+
+<p>
+Для зарядки в дороге
+</p>
+
 </div>
 
 
 <div class="accessory">
-<div class="accessory-icon">🔌</div>
-<h3>Зарядки</h3>
-<p>Адаптеры и кабели</p>
+
+<div class="accessory-icon">
+🔌
+</div>
+
+<h3>
+Зарядки
+</h3>
+
+<p>
+Адаптеры и кабели
+</p>
+
 </div>
 
 
 <div class="accessory">
-<div class="accessory-icon">💳</div>
-<h3>Картхолдеры</h3>
-<p>Стильные и компактные</p>
+
+<div class="accessory-icon">
+💳
+</div>
+
+<h3>
+Картхолдеры
+</h3>
+
+<p>
+Стильные и компактные
+</p>
+
 </div>
 
 
 <div class="accessory">
-<div class="accessory-icon">🍎</div>
-<h3>Аксессуары Apple</h3>
-<p>Для техники Apple</p>
+
+<div class="accessory-icon">
+🍎
+</div>
+
+<h3>
+Аксессуары Apple
+</h3>
+
+<p>
+Для техники Apple
+</p>
+
 </div>
 
 
@@ -1206,19 +2128,27 @@ onclick="openPrice(event,'service')">
 </section>
 
 
-<!-- =========================
-     LOCATION
-========================= -->
+<!-- =====================================================
+     КАРТА
+===================================================== -->
 
-<section class="location" id="location">
+<section
+class="location"
+id="location"
+>
 
 <div class="container">
 
+
 <div class="section-title">
 
-<small>Как нас найти</small>
+<small>
+Как нас найти
+</small>
 
-<h2>Мы здесь 📍</h2>
+<h2>
+Мы здесь 📍
+</h2>
 
 </div>
 
@@ -1228,16 +2158,24 @@ onclick="openPrice(event,'service')">
 
 <div class="location-info">
 
-<h2>Техно Лис</h2>
+
+<h2>
+Техно Лис
+</h2>
 
 
 <div class="location-item">
 
-<small>Адрес</small>
+<small>
+Адрес
+</small>
 
 <strong>
+
 г. Южно-Сахалинск,<br>
+
 ТРК «Сити Молл», 1 этаж
+
 </strong>
 
 </div>
@@ -1245,12 +2183,18 @@ onclick="openPrice(event,'service')">
 
 <div class="location-item">
 
-<small>Телефон</small>
+<small>
+Телефон
+</small>
 
 <strong>
+
 <a href="tel:+79621526990">
+
 8 962 152-69-90
+
 </a>
+
 </strong>
 
 </div>
@@ -1258,25 +2202,36 @@ onclick="openPrice(event,'service')">
 
 <div class="location-item">
 
-<small>Telegram</small>
+<small>
+Telegram
+</small>
 
 <strong>
-<a href="https://t.me/tehnafox"
-target="_blank">
+
+<a
+href="https://t.me/tehnafox"
+target="_blank"
+>
+
 @tehnafox
+
 </a>
+
 </strong>
 
 </div>
 
 
-<a class="btn btn-orange"
+<a
+class="btn btn-orange"
 href="https://www.google.com/maps/search/?api=1&query=ТРК+Сити+Молл+Южно-Сахалинск"
-target="_blank">
+target="_blank"
+>
 
 📍 Построить маршрут
 
 </a>
+
 
 </div>
 
@@ -1284,8 +2239,11 @@ target="_blank">
 <div class="map">
 
 <iframe
+
 src="https://www.google.com/maps?q=ТРК%20Сити%20Молл%20Южно-Сахалинск&output=embed"
+
 loading="lazy">
+
 </iframe>
 
 </div>
@@ -1298,19 +2256,27 @@ loading="lazy">
 </section>
 
 
-<!-- =========================
-     CONTACTS
-========================= -->
+<!-- =====================================================
+     КОНТАКТЫ
+===================================================== -->
 
-<section class="contacts" id="contacts">
+<section
+class="contacts"
+id="contacts"
+>
 
 <div class="container">
 
+
 <div class="section-title">
 
-<small>Связь с нами</small>
+<small>
+Связь с нами
+</small>
 
-<h2>Контакты</h2>
+<h2>
+Контакты
+</h2>
 
 </div>
 
@@ -1320,14 +2286,22 @@ loading="lazy">
 
 <div class="contact-card">
 
-<div class="contact-icon">📞</div>
+<div class="contact-icon">
+📞
+</div>
 
-<h3>Телефон</h3>
+<h3>
+Телефон
+</h3>
 
 <p>
+
 <a href="tel:+79621526990">
+
 8 962 152-69-90
+
 </a>
+
 </p>
 
 </div>
@@ -1335,15 +2309,25 @@ loading="lazy">
 
 <div class="contact-card">
 
-<div class="contact-icon">✈️</div>
+<div class="contact-icon">
+✈️
+</div>
 
-<h3>Telegram</h3>
+<h3>
+Telegram
+</h3>
 
 <p>
-<a href="https://t.me/tehnafox"
-target="_blank">
+
+<a
+href="https://t.me/tehnafox"
+target="_blank"
+>
+
 @tehnafox
+
 </a>
+
 </p>
 
 </div>
@@ -1351,13 +2335,20 @@ target="_blank">
 
 <div class="contact-card">
 
-<div class="contact-icon">📍</div>
+<div class="contact-icon">
+📍
+</div>
 
-<h3>Адрес</h3>
+<h3>
+Адрес
+</h3>
 
 <p>
+
 Южно-Сахалинск,<br>
+
 ТРК «Сити Молл», 1 этаж
+
 </p>
 
 </div>
@@ -1370,61 +2361,94 @@ target="_blank">
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
 <div class="container">
+
 
 <div class="footer-grid">
 
 
 <div>
 
+
 <div class="logo-circle footer-logo">
 
-<img src="logo-circle.png"
+<img
+src="logo-circle.png"
 alt="Техно Лис">
 
 </div>
 
+
 <p class="footer-description">
+
 Техника в надёжных лапах!
+
 </p>
 
-</div>
-
-
-<div class="footer-column">
-
-<h3>Навигация</h3>
-
-<a href="#services">Услуги</a>
-<a href="#price">Прайс-лист</a>
-<a href="#accessories">Аксессуары</a>
-<a href="#location">Где мы</a>
-<a href="#contacts">Контакты</a>
 
 </div>
 
 
 <div class="footer-column">
 
-<h3>Контакты</h3>
+<h3>
+Навигация
+</h3>
 
-<a href="tel:+79621526990">
-📞 8 962 152-69-90
+<a href="#services">
+Услуги
 </a>
 
-<a href="https://t.me/tehnafox"
-target="_blank">
-✈️ @tehnafox
+<a href="#price">
+Прайс-лист
+</a>
+
+<a href="#accessories">
+Аксессуары
 </a>
 
 <a href="#location">
+Где мы
+</a>
+
+<a href="#contacts">
+Контакты
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>
+Контакты
+</h3>
+
+<a href="tel:+79621526990">
+
+📞 8 962 152-69-90
+
+</a>
+
+<a
+href="https://t.me/tehnafox"
+target="_blank"
+>
+
+✈️ @tehnafox
+
+</a>
+
+<a href="#location">
+
 📍 ТРК «Сити Молл», 1 этаж
+
 </a>
 
 </div>
@@ -1434,7 +2458,10 @@ target="_blank">
 
 
 <div class="copyright">
-© 2026 Техно Лис. Ремонт и настройка техники.
+
+© 2026 Техно Лис.
+Ремонт и настройка техники.
+
 </div>
 
 
@@ -1442,6 +2469,10 @@ target="_blank">
 
 </footer>
 
+
+<!-- =====================================================
+     JAVASCRIPT ПРАЙСА
+===================================================== -->
 
 <script>
 
@@ -1453,23 +2484,36 @@ function openPrice(event, category) {
     const contents =
         document.querySelectorAll(".price-content");
 
+
     tabs.forEach(function(tab) {
+
         tab.classList.remove("active");
+
     });
+
 
     contents.forEach(function(content) {
+
         content.classList.remove("active");
+
     });
 
-    event.currentTarget.classList.add("active");
+
+    event.currentTarget
+        .classList
+        .add("active");
+
 
     document
         .getElementById(category)
-        .classList.add("active");
+        .classList
+        .add("active");
+
 }
 
 </script>
 
 
 </body>
+
 </html>
