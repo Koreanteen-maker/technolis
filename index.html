@@ -1,933 +1,1354 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Техно Лис — ремонт техники в Южно-Сахалинске</title>
-  <meta name="description" content="Техно Лис — ремонт смартфонов, ноутбуков и ПК. Поклейка защитных плёнок, установка Windows и приложений. Южно-Сахалинск, ТРК Сити Молл.">
+<title>Техно Лис — ремонт техники в Южно-Сахалинске</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta name="description"
+content="Техно Лис — ремонт смартфонов, ноутбуков, ПК и планшетов. Поклейка плёнки, диагностика, установка приложений и Windows.">
 
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      background: #ffffff;
-      color: #111111;
-      line-height: 1.5;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    .container {
-      width: min(1150px, 92%);
-      margin: auto;
-    }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #111;
+}
 
-    /* HEADER */
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid #eeeeee;
-    }
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
 
-    .nav {
-      height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+/* ================= HEADER ================= */
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 23px;
-      font-weight: 800;
-    }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10,10,10,.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid #ff5a00;
+}
 
-    .fox {
-      width: 42px;
-      height: 42px;
-      background: #ff6a00;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
-    }
+.header-inner {
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    height: 68px;
+    width: 185px;
+    object-fit: contain;
+    object-position: center;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .2s;
+}
+
+nav a:hover {
+    color: #ff5a00;
+}
+
+.header-phone {
+    background: #ff5a00;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.header-phone:hover {
+    background: #ff6b1a;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255,90,0,.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            120deg,
+            #fff 0%,
+            #fff 60%,
+            #f5f5f5 100%
+        );
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: -180px;
+    bottom: -220px;
+    background: #ff5a00;
+    transform: rotate(25deg);
+    opacity: .08;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    padding: 80px 0;
+}
+
+.hero-label {
+    display: inline-block;
+    color: #ff5a00;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 78px);
+    line-height: .95;
+    letter-spacing: -3px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #ff5a00;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #666;
+    max-width: 650px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 23px;
+    border-radius: 10px;
+    font-weight: 800;
+    transition: .2s;
+}
+
+.btn-orange {
+    background: #ff5a00;
+    color: white;
+}
+
+.btn-orange:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,90,0,.3);
+}
+
+.btn-black {
+    background: #111;
+    color: white;
+}
+
+.btn-black:hover {
+    transform: translateY(-3px);
+}
+
+/* ================= ADVANTAGES ================= */
+
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.advantage {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.advantage-icon {
+    font-size: 27px;
+}
+
+.advantage strong {
+    display: block;
+    font-size: 14px;
+}
+
+.advantage span {
+    display: block;
+    color: #777;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+/* ================= SERVICES ================= */
+
+section {
+    padding: 90px 0;
+}
+
+.section-title {
+    margin-bottom: 40px;
+}
+
+.section-title small {
+    color: #ff5a00;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    font-size: clamp(35px,5vw,55px);
+    margin-top: 8px;
+}
+
+.section-title p {
+    margin-top: 12px;
+    color: #777;
+    max-width: 650px;
+}
+
+.services {
+    background: #f6f6f6;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
+}
+
+.service {
+    background: white;
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: center;
+    border: 1px solid #e9e9e9;
+    transition: .25s;
+}
+
+.service:hover {
+    transform: translateY(-6px);
+    border-color: #ff5a00;
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.service h3 {
+    font-size: 17px;
+}
+
+.service p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+/* ================= PRICE ================= */
+
+.price-section {
+    background: #080808;
+    color: white;
+}
+
+.price-tabs {
+    display: flex;
+    overflow-x: auto;
+    border: 1px solid #444;
+    border-radius: 12px 12px 0 0;
+}
+
+.price-tab {
+    flex: 1;
+    min-width: 130px;
+    border: none;
+    padding: 15px;
+    background: #111;
+    color: #aaa;
+    cursor: pointer;
+    font-weight: 800;
+    transition: .2s;
+}
+
+.price-tab:hover,
+.price-tab.active {
+    background: #ff5a00;
+    color: white;
+}
+
+.price-content {
+    display: none;
+    border: 1px solid #333;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    overflow: hidden;
+}
+
+.price-content.active {
+    display: block;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 17px 20px;
+    border-bottom: 1px solid #292929;
+}
+
+.price-row:last-child {
+    border-bottom: none;
+}
+
+.price-name {
+    color: #eee;
+}
+
+.price-value {
+    color: #ff5a00;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.price-note {
+    background: #151515;
+    margin-top: 25px;
+    padding: 22px;
+    border-radius: 12px;
+    color: #aaa;
+    text-align: center;
+}
+
+/* ================= ACCESSORIES ================= */
+
+.accessories {
+    background: #f5f5f5;
+}
+
+.accessory-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+
+.accessory {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid #eee;
+    transition: .2s;
+}
+
+.accessory:hover {
+    border-color: #ff5a00;
+    transform: translateY(-4px);
+}
+
+.accessory-icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+/* ================= MAP ================= */
+
+.location {
+    background: white;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.location-info {
+    background: #f5f5f5;
+    border-radius: 20px;
+    padding: 35px;
+}
+
+.location-info h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+}
+
+.location-item {
+    margin-bottom: 22px;
+}
+
+.location-item small {
+    color: #777;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.location-item strong {
+    font-size: 17px;
+}
+
+.map {
+    min-height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    border: 0;
+}
+
+/* ================= CONTACTS ================= */
+
+.contacts {
+    background: #f5f5f5;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #eee;
+}
+
+.contact-card-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    margin-bottom: 8px;
+}
+
+.contact-card p {
+    color: #777;
+}
+
+.contact-card a {
+    color: #ff5a00;
+    font-weight: 800;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #080808;
+    color: white;
+    padding: 50px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-logo {
+    width: 190px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.footer-description {
+    color: #888;
+    margin-top: 12px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+    color: #aaa;
+    margin-bottom: 9px;
+}
+
+.footer-column a:hover {
+    color: #ff5a00;
+}
+
+.copyright {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    color: #666;
+    font-size: 13px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px) {
 
     nav {
-      display: flex;
-      gap: 28px;
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    nav a {
-      transition: .2s;
-    }
-
-    nav a:hover {
-      color: #ff6a00;
-    }
-
-    .nav-button {
-      background: #111;
-      color: white;
-      padding: 11px 18px;
-      border-radius: 12px;
-      font-weight: 700;
-      transition: .2s;
-    }
-
-    .nav-button:hover {
-      background: #ff6a00;
-      transform: translateY(-2px);
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 80% 30%, rgba(255,106,0,.18), transparent 30%),
-        radial-gradient(circle at 10% 80%, rgba(255,106,0,.08), transparent 25%),
-        #fff;
-    }
-
-    .hero-content {
-      max-width: 760px;
-      padding: 80px 0;
-    }
-
-    .badge {
-      display: inline-flex;
-      background: #fff0e7;
-      color: #ff6a00;
-      padding: 8px 14px;
-      border-radius: 50px;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 {
-      font-size: clamp(45px, 7vw, 82px);
-      line-height: .98;
-      letter-spacing: -4px;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 span {
-      color: #ff6a00;
-    }
-
-    .hero p {
-      font-size: 21px;
-      color: #666;
-      max-width: 650px;
-      margin-bottom: 35px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px 24px;
-      border-radius: 14px;
-      font-weight: 750;
-      transition: .25s;
-    }
-
-    .button-orange {
-      background: #ff6a00;
-      color: #fff;
-      box-shadow: 0 10px 25px rgba(255,106,0,.25);
-    }
-
-    .button-orange:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(255,106,0,.35);
-    }
-
-    .button-black {
-      background: #111;
-      color: #fff;
-    }
-
-    .button-black:hover {
-      transform: translateY(-3px);
-      background: #222;
-    }
-
-    /* SERVICES */
-
-    section {
-      padding: 100px 0;
-    }
-
-    .section-header {
-      margin-bottom: 45px;
-    }
-
-    .section-label {
-      color: #ff6a00;
-      font-weight: 800;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-size: clamp(35px, 5vw, 55px);
-      letter-spacing: -2px;
-      line-height: 1;
-    }
-
-    .section-description {
-      color: #777;
-      max-width: 600px;
-      margin-top: 15px;
-      font-size: 17px;
-    }
-
-    .services {
-      background: #f7f7f7;
+        display: none;
     }
 
     .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+        grid-template-columns: repeat(2,1fr);
     }
-
-    .service-card {
-      background: white;
-      padding: 30px;
-      border-radius: 22px;
-      min-height: 190px;
-      border: 1px solid #eeeeee;
-      transition: .25s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: #ff6a00;
-      box-shadow: 0 15px 35px rgba(0,0,0,.08);
-    }
-
-    .service-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 15px;
-      background: #fff0e7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
-      margin-bottom: 20px;
-    }
-
-    .service-card h3 {
-      font-size: 21px;
-      margin-bottom: 8px;
-    }
-
-    .service-card p {
-      color: #777;
-      font-size: 15px;
-    }
-
-    /* ADVANTAGES */
 
     .advantages {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .advantage {
-      padding: 25px;
-      border: 1px solid #eeeeee;
-      border-radius: 20px;
-    }
-
-    .advantage strong {
-      display: block;
-      font-size: 21px;
-      margin-bottom: 8px;
-    }
-
-    .advantage span {
-      color: #777;
-      font-size: 14px;
-    }
-
-    /* ACCESSORIES */
-
-    .accessories {
-      background: #111;
-      color: white;
-    }
-
-    .accessories .section-description {
-      color: #aaa;
+        grid-template-columns: repeat(2,1fr);
     }
 
     .accessory-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
+        grid-template-columns: repeat(2,1fr);
     }
 
-    .accessory {
-      border: 1px solid #333;
-      border-radius: 20px;
-      padding: 25px;
-      transition: .2s;
+    .location-grid {
+        grid-template-columns: 1fr;
     }
 
-    .accessory:hover {
-      background: #ff6a00;
-      border-color: #ff6a00;
-      transform: translateY(-5px);
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
 
-    .accessory-icon {
-      font-size: 30px;
-      margin-bottom: 15px;
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
     }
+}
 
-    .accessory h3 {
-      font-size: 18px;
-    }
+@media(max-width:600px) {
 
-    /* CONTACTS */
-
-    .contact-box {
-      background: #f7f7f7;
-      border-radius: 30px;
-      padding: 55px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-
-    .contact-info h2 {
-      font-size: 42px;
-      line-height: 1;
-      margin-bottom: 25px;
-    }
-
-    .contact-item {
-      margin: 20px 0;
-    }
-
-    .contact-item small {
-      display: block;
-      color: #888;
-      margin-bottom: 3px;
-    }
-
-    .contact-item a {
-      font-size: 19px;
-      font-weight: 700;
-    }
-
-    .contact-item a:hover {
-      color: #ff6a00;
-    }
-
-    .map {
-      min-height: 300px;
-      border-radius: 22px;
-      background:
-        linear-gradient(rgba(255,106,0,.08), rgba(255,106,0,.08)),
-        #ddd;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 30px;
-    }
-
-    .map-content {
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.1);
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #111;
-      color: white;
-      padding: 35px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .footer-logo {
-      font-weight: 800;
-      font-size: 20px;
-    }
-
-    .copyright {
-      color: #888;
-      font-size: 14px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 850px) {
-
-      nav {
+    .header-phone {
         display: none;
-      }
+    }
 
-      .hero {
-        min-height: 580px;
-      }
+    .logo {
+        width: 160px;
+    }
 
-      .hero h1 {
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero h1 {
+        font-size: 47px;
         letter-spacing: -2px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      .service-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .advantages {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .accessory-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .contact-box {
-        grid-template-columns: 1fr;
-        padding: 30px;
-      }
     }
 
-    @media (max-width: 550px) {
+    .hero p {
+        font-size: 17px;
+    }
 
-      .nav {
-        height: 65px;
-      }
+    .advantages,
+    .service-grid,
+    .accessory-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 
-      .logo {
-        font-size: 19px;
-      }
+    .advantage {
+        align-items: flex-start;
+    }
 
-      .fox {
-        width: 36px;
-        height: 36px;
-        font-size: 21px;
-      }
+    .price-row {
+        font-size: 14px;
+    }
 
-      .hero-content {
-        padding: 60px 0;
-      }
+    .location-info h2 {
+        font-size: 34px;
+    }
 
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      section {
-        padding: 70px 0;
-      }
-
-      .service-grid,
-      .advantages,
-      .accessory-grid {
+    .footer-grid {
         grid-template-columns: 1fr;
-      }
+    }
 
-      .button {
+    .btn {
         width: 100%;
-      }
-
-      .contact-info h2 {
-        font-size: 35px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
     }
-  </style>
+}
+
+</style>
 </head>
+
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header>
-  <div class="container nav">
 
-    <a href="#" class="logo">
-      <div class="fox">🦊</div>
-      Техно Лис
-    </a>
+<div class="container header-inner">
 
-    <nav>
-      <a href="#services">Услуги</a>
-      <a href="#advantages">Почему мы</a>
-      <a href="#accessories">Аксессуары</a>
-      <a href="#contacts">Контакты</a>
-    </nav>
+<a href="#">
+<img src="logo.png" class="logo" alt="Техно Лис">
+</a>
 
-    <a class="nav-button" href="tel:+79621526990">
-      Позвонить
-    </a>
+<nav>
+<a href="#services">Услуги</a>
+<a href="#price">Прайс-лист</a>
+<a href="#accessories">Аксессуары</a>
+<a href="#location">Где мы</a>
+<a href="#contacts">Контакты</a>
+</nav>
 
-  </div>
+<a class="header-phone" href="tel:+79621526990">
+📞 Позвонить
+</a>
+
+</div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-  <div class="container">
+<div class="container">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-      <div class="badge">
-        🦊 Сервисный центр «Техно Лис»
-      </div>
+<div class="hero-label">
+Сервисный центр в Южно-Сахалинске
+</div>
 
-      <h1>
-        Ремонт техники<br>
-        <span>без лишних хлопот.</span>
-      </h1>
+<h1>
+Техника<br>
+в <span>надёжных лапах!</span>
+</h1>
 
-      <p>
-        Ремонт смартфонов, ноутбуков и ПК.
-        Защитные плёнки, установка Windows,
-        приложений и настройка техники.
-      </p>
+<p>
+Ремонт смартфонов, ноутбуков, ПК и другой техники.
+Качественно, быстро и с гарантией.
+</p>
 
-      <div class="buttons">
+<div class="buttons">
 
-        <a class="button button-orange"
-           href="tel:+79621526990">
-          📞 Записаться на ремонт
-        </a>
+<a class="btn btn-orange"
+href="tel:+79621526990">
+📞 Записаться на ремонт
+</a>
 
-        <a class="button button-black"
-           href="https://t.me/technolis"
-           target="_blank">
-          ✈️ Написать в Telegram
-        </a>
+<a class="btn btn-black"
+href="https://t.me/tehnafox"
+target="_blank">
+✈️ Написать в Telegram
+</a>
 
-      </div>
+</div>
 
-    </div>
 
-  </div>
+<div class="advantages">
+
+<div class="advantage">
+<div class="advantage-icon">🛡️</div>
+<div>
+<strong>Гарантия</strong>
+<span>на работы</span>
+</div>
+</div>
+
+<div class="advantage">
+<div class="advantage-icon">⚡</div>
+<div>
+<strong>Быстрый ремонт</strong>
+<span>без лишних ожиданий</span>
+</div>
+</div>
+
+<div class="advantage">
+<div class="advantage-icon">👍</div>
+<div>
+<strong>Честные цены</strong>
+<span>и понятный прайс</span>
+</div>
+</div>
+
+<div class="advantage">
+<div class="advantage-icon">🧡</div>
+<div>
+<strong>Забота</strong>
+<span>о каждом клиенте</span>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 
 <section class="services" id="services">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-header">
-
-      <div class="section-label">
-        Наши услуги
-      </div>
-
-      <h2 class="section-title">
-        Что мы умеем
-      </h2>
-
-      <p class="section-description">
-        Поможем вернуть технику к жизни,
-        настроить устройство или защитить его
-        от повреждений.
-      </p>
-
-    </div>
+<div class="section-title">
+<small>Наши услуги</small>
+<h2>Что мы делаем</h2>
+<p>
+Ремонтируем и настраиваем технику,
+а также помогаем подобрать аксессуары.
+</p>
+</div>
 
 
-    <div class="service-grid">
+<div class="service-grid">
 
-      <div class="service-card">
-        <div class="service-icon">📱</div>
-        <h3>Ремонт смартфонов</h3>
-        <p>
-          Замена дисплеев, аккумуляторов,
-          разъёмов и других компонентов.
-        </p>
-      </div>
+<div class="service">
+<div class="service-icon">📱</div>
+<h3>Ремонт смартфонов</h3>
+<p>iPhone, Samsung, Xiaomi и другие</p>
+</div>
 
+<div class="service">
+<div class="service-icon">💻</div>
+<h3>Ремонт ноутбуков</h3>
+<p>Диагностика, ремонт и обслуживание</p>
+</div>
 
-      <div class="service-card">
-        <div class="service-icon">💻</div>
-        <h3>Ремонт ноутбуков</h3>
-        <p>
-          Диагностика и ремонт ноутбуков
-          различных производителей.
-        </p>
-      </div>
+<div class="service">
+<div class="service-icon">🖥️</div>
+<h3>Ремонт ПК</h3>
+<p>Компьютеры и комплектующие</p>
+</div>
 
+<div class="service">
+<div class="service-icon">📲</div>
+<h3>Планшеты</h3>
+<p>Замена дисплеев и аккумуляторов</p>
+</div>
 
-      <div class="service-card">
-        <div class="service-icon">🖥️</div>
-        <h3>Ремонт ПК</h3>
-        <p>
-          Обслуживание, диагностика,
-          модернизация и ремонт компьютеров.
-        </p>
-      </div>
+<div class="service">
+<div class="service-icon">🛡️</div>
+<h3>Поклейка плёнок</h3>
+<p>Премиум плёнка и бронеплёнка</p>
+</div>
 
+<div class="service">
+<div class="service-icon">⚙️</div>
+<h3>Установка приложений</h3>
+<p>Игры, программы и настройка</p>
+</div>
 
-      <div class="service-card">
-        <div class="service-icon">🛡️</div>
-        <h3>Защитные плёнки</h3>
-        <p>
-          Профессиональная поклейка
-          защитных плёнок на устройства.
-        </p>
-      </div>
+<div class="service">
+<div class="service-icon">🪟</div>
+<h3>Windows и Office</h3>
+<p>Установка и настройка</p>
+</div>
 
+<div class="service">
+<div class="service-icon">🥽</div>
+<h3>VR-очки</h3>
+<p>Настройка и прошивка</p>
+</div>
 
-      <div class="service-card">
-        <div class="service-icon">⚙️</div>
-        <h3>Установка приложений</h3>
-        <p>
-          Поможем установить и настроить
-          необходимые приложения.
-        </p>
-      </div>
+</div>
 
-
-      <div class="service-card">
-        <div class="service-icon">🪟</div>
-        <h3>Windows и Office</h3>
-        <p>
-          Установка и настройка Windows
-          и офисных программ.
-        </p>
-      </div>
-
-
-      <div class="service-card">
-        <div class="service-icon">🥽</div>
-        <h3>VR-очки</h3>
-        <p>
-          Настройка, прошивка и установка
-          необходимого ПО для VR.
-        </p>
-      </div>
-
-
-      <div class="service-card">
-        <div class="service-icon">🔧</div>
-        <h3>Диагностика</h3>
-        <p>
-          Найдём причину неисправности
-          и предложим оптимальный ремонт.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ADVANTAGES -->
+<!-- ================= PRICE ================= -->
 
-<section id="advantages">
+<section class="price-section" id="price">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-header">
-
-      <div class="section-label">
-        Техно Лис
-      </div>
-
-      <h2 class="section-title">
-        Почему выбирают нас
-      </h2>
-
-    </div>
+<div class="section-title">
+<small>Стоимость</small>
+<h2>Прайс-лист</h2>
+<p>
+Окончательная стоимость ремонта зависит
+от модели устройства и сложности работы.
+</p>
+</div>
 
 
-    <div class="advantages">
+<div class="price-tabs">
 
-      <div class="advantage">
-        <strong>🔍 Диагностика</strong>
-        <span>
-          Разберёмся в причине неисправности
-          перед ремонтом.
-        </span>
-      </div>
+<button class="price-tab active"
+onclick="openPrice(event,'smartphones')">
+Смартфоны
+</button>
 
-      <div class="advantage">
-        <strong>⚡ Быстро</strong>
-        <span>
-          Стараемся выполнить ремонт
-          максимально оперативно.
-        </span>
-      </div>
+<button class="price-tab"
+onclick="openPrice(event,'laptops')">
+Ноутбуки
+</button>
 
-      <div class="advantage">
-        <strong>🛠️ Опыт</strong>
-        <span>
-          Работаем с популярными моделями
-          смартфонов и компьютеров.
-        </span>
-      </div>
+<button class="price-tab"
+onclick="openPrice(event,'pc')">
+ПК
+</button>
 
-      <div class="advantage">
-        <strong>💬 На связи</strong>
-        <span>
-          Всегда можно связаться с нами
-          по телефону или Telegram.
-        </span>
-      </div>
+<button class="price-tab"
+onclick="openPrice(event,'tablets')">
+Планшеты
+</button>
 
-    </div>
+<button class="price-tab"
+onclick="openPrice(event,'other')">
+Другие услуги
+</button>
 
-  </div>
+</div>
+
+
+<!-- SMARTPHONES -->
+
+<div class="price-content active" id="smartphones">
+
+<div class="price-row">
+<span class="price-name">Замена дисплея</span>
+<span class="price-value">от 3 000 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Замена аккумулятора</span>
+<span class="price-value">от 1 500 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Замена разъёма зарядки</span>
+<span class="price-value">от 1 800 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Замена заднего стекла</span>
+<span class="price-value">от 2 000 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Замена камеры</span>
+<span class="price-value">от 2 000 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Чистка после влаги</span>
+<span class="price-value">от 2 500 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Диагностика</span>
+<span class="price-value">БЕСПЛАТНО</span>
+</div>
+
+</div>
+
+
+<!-- LAPTOPS -->
+
+<div class="price-content" id="laptops">
+
+<div class="price-row">
+<span class="price-name">Диагностика ноутбука</span>
+<span class="price-value">БЕСПЛАТНО</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Чистка системы охлаждения</span>
+<span class="price-value">от 2 000 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Замена термопасты</span>
+<span class="price-value">от 1 500 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Установка Windows</span>
+<span class="price-value">2 000 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Ремонт ноутбука</span>
+<span class="price-value">от 4 000 ₽</span>
+</div>
+
+</div>
+
+
+<!-- PC -->
+
+<div class="price-content" id="pc">
+
+<div class="price-row">
+<span class="price-name">Диагностика ПК</span>
+<span class="price-value">БЕСПЛАТНО</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Чистка ПК</span>
+<span class="price-value">от 1 500 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Замена термопасты</span>
+<span class="price-value">от 1 500 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Сборка ПК</span>
+<span class="price-value">от 3 000 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Ремонт ПК</span>
+<span class="price-value">от 2 000 ₽</span>
+</div>
+
+</div>
+
+
+<!-- TABLETS -->
+
+<div class="price-content" id="tablets">
+
+<div class="price-row">
+<span class="price-name">Замена дисплея</span>
+<span class="price-value">от 3 500 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Замена аккумулятора</span>
+<span class="price-value">от 2 000 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Замена разъёма</span>
+<span class="price-value">от 2 000 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Диагностика</span>
+<span class="price-value">БЕСПЛАТНО</span>
+</div>
+
+</div>
+
+
+<!-- OTHER -->
+
+<div class="price-content" id="other">
+
+<div class="price-row">
+<span class="price-name">Премиум плёнка</span>
+<span class="price-value">1 500 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Бронеплёнка</span>
+<span class="price-value">2 000 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Бронестекло для iPhone</span>
+<span class="price-value">2 000 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Чистка динамиков и разъёмов</span>
+<span class="price-value">800 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Установка приложений</span>
+<span class="price-value">от 1 000 ₽</span>
+</div>
+
+<div class="price-row">
+<span class="price-name">Перепрошивка устройства</span>
+<span class="price-value">от 2 000 ₽</span>
+</div>
+
+</div>
+
+
+<div class="price-note">
+💬 Точную стоимость сообщим после диагностики.
+<br>
+<a href="https://t.me/tehnafox" target="_blank">
+Написать в Telegram → @tehnafox
+</a>
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ACCESSORIES -->
+<!-- ================= ACCESSORIES ================= -->
 
 <section class="accessories" id="accessories">
 
-  <div class="container">
+<div class="container">
 
-    <div class="section-header">
-
-      <div class="section-label">
-        Магазин
-      </div>
-
-      <h2 class="section-title">
-        Аксессуары
-      </h2>
-
-      <p class="section-description">
-        Всё необходимое для защиты и зарядки
-        вашего устройства.
-      </p>
-
-    </div>
+<div class="section-title">
+<small>Магазин</small>
+<h2>Аксессуары</h2>
+<p>
+Защитные аксессуары и всё необходимое
+для вашего смартфона.
+</p>
+</div>
 
 
-    <div class="accessory-grid">
+<div class="accessory-grid">
 
-      <div class="accessory">
-        <div class="accessory-icon">📱</div>
-        <h3>Чехлы</h3>
-      </div>
+<div class="accessory">
+<div class="accessory-icon">📱</div>
+<h3>Чехлы</h3>
+<p>На популярные модели смартфонов</p>
+</div>
 
-      <div class="accessory">
-        <div class="accessory-icon">🛡️</div>
-        <h3>Защитные стёкла</h3>
-      </div>
+<div class="accessory">
+<div class="accessory-icon">🛡️</div>
+<h3>Защитные стёкла</h3>
+<p>Для экрана и камер</p>
+</div>
 
-      <div class="accessory">
-        <div class="accessory-icon">✨</div>
-        <h3>Плёнки</h3>
-      </div>
+<div class="accessory">
+<div class="accessory-icon">✨</div>
+<h3>Плёнки</h3>
+<p>Премиум и бронеплёнка</p>
+</div>
 
-      <div class="accessory">
-        <div class="accessory-icon">🧲</div>
-        <h3>MagSafe</h3>
-      </div>
+<div class="accessory">
+<div class="accessory-icon">🧲</div>
+<h3>MagSafe</h3>
+<p>Зарядки и аксессуары</p>
+</div>
 
-      <div class="accessory">
-        <div class="accessory-icon">🔋</div>
-        <h3>Power Bank</h3>
-      </div>
+<div class="accessory">
+<div class="accessory-icon">🔋</div>
+<h3>Power Bank</h3>
+<p>Для зарядки в дороге</p>
+</div>
 
-      <div class="accessory">
-        <div class="accessory-icon">🔌</div>
-        <h3>Зарядки</h3>
-      </div>
+<div class="accessory">
+<div class="accessory-icon">🔌</div>
+<h3>Зарядки</h3>
+<p>Адаптеры и кабели</p>
+</div>
 
-      <div class="accessory">
-        <div class="accessory-icon">🔗</div>
-        <h3>Кабели</h3>
-      </div>
+<div class="accessory">
+<div class="accessory-icon">💳</div>
+<h3>Картхолдеры</h3>
+<p>Стильные и компактные</p>
+</div>
 
-      <div class="accessory">
-        <div class="accessory-icon">💳</div>
-        <h3>Картхолдеры</h3>
-      </div>
+<div class="accessory">
+<div class="accessory-icon">🍎</div>
+<h3>Аксессуары Apple</h3>
+<p>Для техники Apple</p>
+</div>
 
-    </div>
+</div>
 
-  </div>
-
-</section>
-
-
-<!-- CONTACTS -->
-
-<section id="contacts">
-
-  <div class="container">
-
-    <div class="contact-box">
-
-      <div class="contact-info">
-
-        <div class="section-label">
-          Контакты
-        </div>
-
-        <h2>
-          Заглядывайте<br>
-          в гости 🦊
-        </h2>
-
-
-        <div class="contact-item">
-          <small>Адрес</small>
-          <strong>
-            г. Южно-Сахалинск,<br>
-            ТРК «Сити Молл», 1 этаж
-          </strong>
-        </div>
-
-
-        <div class="contact-item">
-          <small>Телефон</small>
-
-          <a href="tel:+79621526990">
-            8 962 152-69-90
-          </a>
-        </div>
-
-
-        <div class="contact-item">
-          <small>Telegram</small>
-
-          <a href="https://t.me/technolis"
-             target="_blank">
-            @technolis
-          </a>
-        </div>
-
-
-        <div class="buttons">
-
-          <a class="button button-orange"
-             href="tel:+79621526990">
-            Позвонить
-          </a>
-
-          <a class="button button-black"
-             href="https://t.me/technolis"
-             target="_blank">
-            Telegram
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="map">
-
-        <div class="map-content">
-
-          <div style="font-size:40px;">
-            📍
-          </div>
-
-          <h3>
-            ТРК «Сити Молл»
-          </h3>
-
-          <p>
-            1 этаж<br>
-            Южно-Сахалинск
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= LOCATION ================= -->
+
+<section class="location" id="location">
+
+<div class="container">
+
+<div class="section-title">
+<small>Как нас найти</small>
+<h2>Мы здесь 📍</h2>
+</div>
+
+
+<div class="location-grid">
+
+<div class="location-info">
+
+<h2>
+Техно Лис
+</h2>
+
+<div class="location-item">
+
+<small>Адрес</small>
+
+<strong>
+г. Южно-Сахалинск,<br>
+ТРК «Сити Молл», 1 этаж
+</strong>
+
+</div>
+
+
+<div class="location-item">
+
+<small>Телефон</small>
+
+<strong>
+<a href="tel:+79621526990">
+8 962 152-69-90
+</a>
+</strong>
+
+</div>
+
+
+<div class="location-item">
+
+<small>Telegram</small>
+
+<strong>
+<a href="https://t.me/tehnafox"
+target="_blank">
+@tehnafox
+</a>
+</strong>
+
+</div>
+
+
+<a class="btn btn-orange"
+href="https://www.google.com/maps/search/?api=1&query=ТРК+Сити+Молл+Южно-Сахалинск"
+target="_blank">
+
+📍 Построить маршрут
+
+</a>
+
+</div>
+
+
+<div class="map">
+
+<iframe
+src="https://www.google.com/maps?q=ТРК%20Сити%20Молл%20Южно-Сахалинск&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACTS ================= -->
+
+<section class="contacts" id="contacts">
+
+<div class="container">
+
+<div class="section-title">
+<small>Связь с нами</small>
+<h2>Контакты</h2>
+</div>
+
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<div class="contact-card-icon">📞</div>
+
+<h3>Телефон</h3>
+
+<p>
+<a href="tel:+79621526990">
+8 962 152-69-90
+</a>
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="contact-card-icon">✈️</div>
+
+<h3>Telegram</h3>
+
+<p>
+<a href="https://t.me/tehnafox"
+target="_blank">
+@tehnafox
+</a>
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="contact-card-icon">📍</div>
+
+<h3>Адрес</h3>
+
+<p>
+Южно-Сахалинск,<br>
+ТРК «Сити Молл», 1 этаж
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-  <div class="container footer-inner">
+<div class="container">
 
-    <div class="footer-logo">
-      🦊 Техно Лис
-    </div>
+<div class="footer-grid">
 
-    <div class="copyright">
-      © 2026 Техно Лис. Ремонт техники.
-    </div>
+<div>
 
-  </div>
+<img src="logo.png"
+class="footer-logo"
+alt="Техно Лис">
+
+<p class="footer-description">
+Техника в надёжных лапах!
+</p>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>Навигация</h3>
+
+<a href="#services">Услуги</a>
+<a href="#price">Прайс-лист</a>
+<a href="#accessories">Аксессуары</a>
+<a href="#location">Где мы</a>
+<a href="#contacts">Контакты</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>Контакты</h3>
+
+<a href="tel:+79621526990">
+📞 8 962 152-69-90
+</a>
+
+<a href="https://t.me/tehnafox"
+target="_blank">
+✈️ @tehnafox
+</a>
+
+<a href="#location">
+📍 ТРК «Сити Молл», 1 этаж
+</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+© 2026 Техно Лис. Ремонт и настройка техники.
+</div>
+
+</div>
 
 </footer>
 
+
+<script>
+
+function openPrice(event, category) {
+
+    let tabs = document.querySelectorAll(".price-tab");
+    let contents = document.querySelectorAll(".price-content");
+
+    tabs.forEach(tab => {
+        tab.classList.remove("active");
+    });
+
+    contents.forEach(content => {
+        content.classList.remove("active");
+    });
+
+    event.currentTarget.classList.add("active");
+
+    document
+        .getElementById(category)
+        .classList.add("active");
+}
+
+</script>
 
 </body>
 </html>
